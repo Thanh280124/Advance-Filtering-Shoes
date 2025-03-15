@@ -1,15 +1,14 @@
-
-
-export default function Recommended() {
+import Button from "../componentShoe/Button"
+export default function Recommended({handleClick}) {
   return (
     <div>
       <h2 className="ml-80 mb-5 mt-5 text-2xl font-serif">Recommended</h2>
       <div className="flex ml-80">
-        <button className="px-5 py-2.5 mr-1.5 border border-gray-300 rounded-md text-gray-800 cursor-pointer">All Products</button>
-        <button className="px-5 py-2.5 mr-1.5 border border-gray-300 rounded-md text-gray-800 cursor-pointer">Nike</button>
-        <button className="px-5 py-2.5 mr-1.5 border border-gray-300 rounded-md text-gray-800 cursor-pointer">Adidas</button>
-        <button className="px-5 py-2.5 mr-1.5 border border-gray-300 rounded-md text-gray-800 cursor-pointer">Puma</button>
-        <button className="px-5 py-2.5 mr-1.5 border border-gray-300 rounded-md text-gray-800 cursor-pointer">Vans</button>
+      <Button onClickHandler={handleClick} value='' title='All Products'/>
+        <Button onClickHandler={handleClick} value='Nike' title='Nike'/>
+        <Button onClickHandler={handleClick} value='Adidas' title='Adidas'/>
+        <Button onClickHandler={handleClick} value='Puma' title='Puma'/>
+        <Button onClickHandler={handleClick} value='Vans' title='Vans'/>
       </div>
     </div>
   )

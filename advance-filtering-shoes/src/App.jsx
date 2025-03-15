@@ -4,6 +4,8 @@ import Product from "./Products/Product"
 import Recommended from "./Recommended/Recommended"
 import Sidebar from "./Sidebar/Sidebar"
 import data from './db/data'
+import Card from "./componentShoe/Card"
+import './index.css'
 function App() {
   const [selectCategory,setSelectedCategory] =useState(null);
 
@@ -13,13 +15,15 @@ function App() {
     setQuery(e.target.value)
   }
 
-  const filteredItems = data.filter(data => data.title.toLocaleLowerCase().indexOf(query.toLocaleLowerCase() !== -1))
+  const filteredItems = data.filter(data => data.title.toLocaleLowerCase().indexOf(query.toLocaleLowerCase()) !== -1)
   
   const handleChange = (event) => {
     setSelectedCategory(event.target.value);
   };
 
   const handleClick = (event) => {
+    console.log(event.target.value);
+    
     setSelectedCategory(event.target.value);
   };
 
