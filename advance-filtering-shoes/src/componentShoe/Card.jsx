@@ -8,7 +8,7 @@ export default function Card({ img, title, star, reviews, prevPrice, newPrice })
     <div className="card-deatails">
       <h3 className="mb-4">{title}</h3>
       <section className="mb-4 flex">
-        <FaStar className = 'text-yellow-500'/> <FaStar className = 'text-yellow-500'/><FaStar className = 'text-yellow-500'/> <FaStar/>  
+        {star} {star} {star} {star} 
                 <span className="text-sm ml-2">{reviews}</span>
       </section>
       <section className="flex justify-around items-center">
