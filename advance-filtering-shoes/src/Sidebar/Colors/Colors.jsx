@@ -3,7 +3,7 @@ import Input from "../../componentShoe/Input"
 function Colors({handleChange}) {
   return (
     <div>
-      <h2 className="text-2xl font-normal mb-5">Colors</h2>
+      <h2 className="text-2xl font-normal mb-5 mt-10 mr-10">Colors</h2>
       <label className='sidebar-label-container'>
         <input type="radio" onChange={handleChange} value='' name='test3' />
         <span className='checkmark all'></span>All
