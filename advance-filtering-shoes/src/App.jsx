@@ -10,6 +10,7 @@ import './index.css';
 function App() {
   const [selectCategory, setSelectedCategory] = useState(null);
   const [query, setQuery] = useState("");
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 
   const handleInputChange = (e) => {
     setQuery(e.target.value);
@@ -26,6 +27,10 @@ function App() {
   const handleClick = (event) => {
     console.log(event.target.value);
     setSelectedCategory(event.target.value);
+  };
+
+  const toggleSidebar = () => {
+    setIsSidebarOpen(!isSidebarOpen);
   };
 
   function filteredData(products, selected, query) {
@@ -64,14 +69,30 @@ function App() {
   const result = filteredData(data, selectCategory, query);
 
   return (
-    <div className="flex flex-col sm:flex-row min-h-screen">
-      <div className="w-full sm:w-[15%] border-b-2 sm:border-b-0 sm:border-r-2 border-gray-200">
-        <Sidebar handleChange={handleChange} />
-      </div>
-      <div className="flex-1 flex flex-col">
-        <Nav query={query} handleInputChange={handleInputChange} />
-        <Recommended handleClick={handleClick} />
-        <Product result={result} />
+    <div className="flex flex-col min-h-screen">
+      <button
+        className="sm:hidden p-2 bg-gray-200 text-center"
+        onClick={toggleSidebar}
+      >
+        {isSidebarOpen ? "Close Sidebar" : "Open Sidebar"}
+      </button>
+
+      <div className="flex flex-col sm:flex-row flex-1">
+        {/* Sidebar */}
+        <div
+          className={`w-full sm:w-[13%] sm:min-w-[200px] border-b-2 sm:border-b-0 sm:border-r-2 border-gray-200 ${
+            isSidebarOpen ? "block" : "hidden sm:block"
+          }`}
+        >
+          <Sidebar handleChange={handleChange} />
+        </div>
+
+        {/* Nội dung chính */}
+        <div className="flex-1 flex flex-col">
+          <Nav query={query} handleInputChange={handleInputChange} />
+          <Recommended handleClick={handleClick} />
+          <Product result={result} />
+        </div>
       </div>
     </div>
   );
