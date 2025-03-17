@@ -4,7 +4,7 @@ import { BsFillBagHeartFill } from "react-icons/bs";
 export default function Card({ img, title, star, reviews, prevPrice, newPrice }) {
   return (
     <section className="m-5 border-2 border-gray-200 p-5 cursor-pointer">
-    <img className="w-52 mb-4" src={img} alt={title} />
+    <img className="w-52 h-40 object-contain mb-4" src={img} alt={title} />
     <div className="card-deatails">
       <h3 className="mb-4">{title}</h3>
       <section className="mb-4 flex">

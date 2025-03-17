@@ -1,4 +1,4 @@
-import Card from "../componentShoe/Card";
+
 export default function Product({result}) {
   return (
     <div>
